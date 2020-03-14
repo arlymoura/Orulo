@@ -15,12 +15,12 @@ desc "Run complete test suite"
 task :test do
   Rake::Task["rubocop"].invoke
   Rake::Task["security:rbp"].invoke
-  Rake::Task["security:brakeman"].invoke
   if ENV["CIRCLE_TEST_REPORTS"]
     Rake::Task["spec_ci"].invoke
   else
     Rake::Task["spec"].invoke
   end
+  Rake::Task["security:brakeman"].invoke
 end
 
 namespace :db do

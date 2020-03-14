@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.orulo.com.br/api/v2/buildings
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.orulo.com.br
+      Authorization:
+      - ''
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Sat, 14 Mar 2020 15:39:54 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=mrHaQzGJ5e8WQc2M03PXILdk9sFGNPAzLgNfElkhG+S7UkvnhSc2J+bqc/fC/JngfoyLfS8tpjuhwWhGIdR46QJBwHMtKXh039R1NA9VKhaB6kBOa7HFBexJ9f98;
+        Expires=Sat, 21 Mar 2020 15:39:54 GMT; Path=/
+      - AWSALBCORS=mrHaQzGJ5e8WQc2M03PXILdk9sFGNPAzLgNfElkhG+S7UkvnhSc2J+bqc/fC/JngfoyLfS8tpjuhwWhGIdR46QJBwHMtKXh039R1NA9VKhaB6kBOa7HFBexJ9f98;
+        Expires=Sat, 21 Mar 2020 15:39:54 GMT; Path=/; SameSite=None; Secure
+      - __cfduid=d118d2f450967aab4a21c05c0bf2517b01584200394; expires=Mon, 13-Apr-20
+        15:39:54 GMT; path=/; domain=.orulo.com.br; HttpOnly; SameSite=Lax; Secure
+      - _mkra_stck=orulo_prod_db%3A1584200399.7958548; path=/; max-age=10; expires=Sat,
+        14 Mar 2020 15:40:04 -0000; HttpOnly
+      - ahoy_visit=2aa73ff7-e4b8-47c9-bf96-92d8875c0889; path=/; expires=Sat, 14 Mar
+        2020 19:39:54 -0000
+      - ahoy_visitor=32044cc4-1df0-40e8-8304-4979ffdf5d32; path=/; expires=Mon, 14
+        Mar 2022 15:39:54 -0000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Cache-Control:
+      - private, no-store
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - !binary |-
+        QmVhcmVyIHJlYWxtPSJEb29ya2VlcGVyIiwgZXJyb3I9ImludmFsaWRfdG9rZW4iLCBlcnJvcl9kZXNjcmlwdGlvbj0iTyB0b2tlbiBkZSBhY2Vzc28gKGFjY2VzcyB0b2tlbikgw6kgaW52w6FsaWRvIg==
+      X-Request-Id:
+      - 3e6d65c0-f52c-4225-83e2-0b214c7362fe
+      X-Runtime:
+      - '0.011103'
+      Vary:
+      - Origin
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 573f17101844dbc4-GIG
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-25=":443"; ma=86400, h3-24=":443"; ma=86400, h3-23=":443";
+        ma=86400
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: null
+  recorded_at: Sat, 14 Mar 2020 15:39:55 GMT
+recorded_with: VCR 5.1.0
