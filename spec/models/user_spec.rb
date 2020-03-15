@@ -1,21 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:all) do
     @user1 = create(:user)
   end
-  
-  it "is valid with valid attributes" do
-    expect(@user1).to be_valid
-  end
-  
-  it "has a unique email" do
-    user2 = build(:user, email: 'asd.com')
-    expect(user2).to_not be_valid
-  end
-  
-  it "is not valid without an email" do
-    user2 = build(:user, email: nil)
-    expect(user2).to_not be_valid
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:email) }
+    it { should validate_uniqueness_of(:email) }
   end
 end

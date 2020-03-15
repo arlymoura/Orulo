@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'OruloApi::Buildings' do
   describe '.call' do
     context 'when have access' do
