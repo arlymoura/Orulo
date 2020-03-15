@@ -23,7 +23,8 @@ module OruloApi
       request = Net::HTTP::Get.new(url)
       request['Authorization'] = authorization
       response = https.request(request)
-      JSON.parse(response.read_body)
+      data = JSON.parse(response.read_body)
+      data['buildings']
     end
 
     def url_params
