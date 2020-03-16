@@ -2,7 +2,7 @@ module Api
   module V1
     class BuildingsController < BaseController
       def index
-        user = User.last
+        user = User.find(params[:user_id])
         buildings = OruloApi::Buildings.call
         new_buildings = OruloApi::BuildingCreateJson.call(buildings, user)
         render json: new_buildings
