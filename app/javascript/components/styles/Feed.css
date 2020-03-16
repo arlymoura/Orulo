@@ -11,6 +11,12 @@ body {
     font: 14px, Arial, Helvetica, sans-serif;
         -webkit-font-feature-smoothing: antialiased !important; 
 }
+.header-container {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: 0;
+}
 
 section#post-list{
     width: 100%;
@@ -22,6 +28,7 @@ section#post-list{
     align-content: stretch;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 section#post-list article{
