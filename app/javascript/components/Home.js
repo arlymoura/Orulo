@@ -4,8 +4,6 @@ import './styles/Feed.css';
 import like from './assets/like.svg';
 import unlike from './assets/unlike.svg';
 import api from './services/api';
-import Header from './Header';
-
 
 class Home extends React.Component {
   constructor(props) {
@@ -54,35 +52,30 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="header-container">
-          <Header />
-        </div>
-        <div>
-          <section id="post-list">
-            {this.state.feed.map(post => (
-              <article key={post.id}>
-                <header>
-                  <div className="user-info">
-                    <span> {post.finality}</span>
-                    <span className="place"> {post.name} </span>
-                  </div>
-                </header>
-                <img src={post.default_image['520x280']} alt="" />
-                <footer>
-                  <div className="actions" >
-                    <button type="button" onClick={() => { this.handleLike(post) }}>
-                      <img src={post.favorited ? like : unlike} alt="" />
-                    </button>
-                  </div>
-                  <strong>{post.likes}Descrição</strong>
-                  <p>
-                    {post.description}
-                  </p>
-                </footer>
-              </article>
-            ))}
-          </section>
-        </div>
+        <section id="post-list">
+          {this.state.feed.map(post => (
+            <article key={post.id}>
+              <header>
+                <div className="user-info">
+                  <span> {post.finality}</span>
+                  <span className="place"> {post.name} </span>
+                </div>
+              </header>
+              <img src={post.default_image['520x280']} alt="" />
+              <footer>
+                <div className="actions" >
+                  <button type="button" onClick={() => { this.handleLike(post) }}>
+                    <img src={post.favorited ? like : unlike} alt="" />
+                  </button>
+                </div>
+                <strong>{post.likes}Descrição</strong>
+                <p>
+                  {post.description}
+                </p>
+              </footer>
+            </article>
+          ))}
+        </section>
       </React.Fragment>
     );
   }

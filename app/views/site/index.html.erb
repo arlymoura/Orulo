@@ -1,2 +1,13 @@
 <%= javascript_pack_tag 'application' %>
-<%= react_component("App", {currentUserId: @current_user_id}) %>
+<div>
+  <div class="containerHeader">
+    <div class="desk-nav-bar">
+      <ul>
+        <li class="active"><a href="#">home</a></li>
+
+        <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %>  </li>
+      </ul>
+    </div>
+  </div>
+  <%= react_component("App", {currentUserId: current_user.id.to_s}) %>
+</div>
