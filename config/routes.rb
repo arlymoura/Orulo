@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: { format: 'json' } do
       get 'buildings', to: 'buildings#index'
+      get 'building_favorited', to: 'buildings#change_user_favorite_building'
     end
   end
   

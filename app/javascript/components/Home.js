@@ -18,44 +18,36 @@ class Home extends React.Component {
 
 
   async componentDidMount() {
-    //this.registerToSocket();
 
     const response = await api.get('api/v1/buildings', {
-        params: {
-          user_id: this.state.currentUserId
-        }
+      params: {
+        user_id: this.state.currentUserId
+      }
     });
-    await console.log(response);
-    await console.log(this.props)
     await this.setState({ feed: response.data });
 
   }
 
-  registerToSocket = () => {
-    const socket = io(`http://localhost:3333`);
+  async handleLike(building) {
 
-    socket.on('post', newPost => {
-      this.setState({ feed: [newPost, ...this.state.feed] });
+    await api.get('api/v1/building_favorited', {
+      params: {
+        user_id: this.state.currentUserId,
+        favorited: building.favorited,
+        building_id: building.id
+      }
+    });
 
+    await this.setState({
+      feed:
+        this.state.feed.map(obj => {
+          if (obj.id == building.id) {
+            obj.favorited = !obj.favorited
+          }
+          return obj
+        })
     })
 
-    socket.on('like', likedPost => {
-      this.setState({
-        feed: this.state.feed.map(post =>
-          post._id === likedPost._id ? likedPost : post
-        )
-
-      });
-
-
-    })
-  }
-
-
-  handleLike = id => {
-    //api.post(`/posts/${id}/like`);
-    console.log("favorited")
-    console.log(id)
   }
 
   render() {
@@ -72,7 +64,7 @@ class Home extends React.Component {
             <img src={post.default_image['520x280']} alt="" />
             <footer>
               <div className="actions" >
-                <button type="button" onClick={() => this.handleLike(post.id)}>
+                <button type="button" onClick={() => { this.handleLike(post) }}>
                   <img src={post.favorited ? like : unlike} alt="" />
                 </button>
               </div>
