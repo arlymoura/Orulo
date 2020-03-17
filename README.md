@@ -24,12 +24,12 @@ the file will look like this:<br />
 
 secret_key_base: 036b8a8ccaab883a48195540a958ced87414dcdfc404a3a7b6934871356d7056d4d3d8ba11bb9c9cc715e49531810deb1d538e1f66eea844aae6184b6f2ffc59
 
-orulo:
-  authorization: Bearer a8vZ5ZYVb9c4TyaPwhKTfx8ilehxmPG6lp86KASiHgU
+orulo:</br>
+  authorization: Bearer a8vZ5ZYVb9c4TyaPwhKTfx8ilehxmPG6lp86KASiHgU</br>
 
-postgres:
-  username: arlymoura
-  password: asm123456
+postgres:</br>
+  username: arlymoura</br>
+  password: asm123456</br>
 
 
 Runs command in terminal.<br />
